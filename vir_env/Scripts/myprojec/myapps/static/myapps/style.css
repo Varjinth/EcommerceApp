@@ -1,0 +1,253 @@
+*{
+  box-sizing:border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin:0
+}
+
+header{
+  display: flex;
+  margin-top: 1px;
+  justify-content: space-evenly;
+  align-items: center;
+  /* position: fixed; */
+  height:75px;
+  background-color: black;
+}
+
+
+.logoname{ 
+    font-size: 40px;    
+    color: orange;
+    font-family: sans-serif;
+    padding: 2px;
+    width: 500px;
+    height: 40px;
+    
+}
+
+
+
+
+
+.nav_list{
+  width: 35%;
+  /* max-width: 300px; */
+  height: 50px;
+}
+
+.nav_list > ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+.nav_list > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+}
+
+.nav_link{
+  text-decoration: none;
+  color: orange;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.nav_link:hover{
+  color: black;
+  background-color: orange;
+}
+
+  
+.login_logo{
+  display: flex;
+  top: 15px;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.login_logo > p > img{
+  margin: auto 0;   
+    width: 60px;
+    height: 60px;
+}
+
+.login_logo > p > a{
+  text-decoration: none;
+  color: orange;
+  padding: 6px;
+  border-radius: 10px;
+}
+.login_logo > p > a:hover{
+  color: black;
+  background-color: orange;
+}
+
+
+
+
+body{
+    
+    padding:0 0;
+    margin: 0 0;
+    font-family: sans-serif;
+}
+main{
+display: flex;
+background-color: black;
+}
+
+.slideshow-container img{
+  width: 900px;
+  height: 500px;
+  object-fit: cover;
+ }
+
+/* Slideshow container */
+.slideshow-container {
+  width: 900px;
+  height: 500px;
+  margin-left: 20px;
+  overflow: hidden;
+  
+  }
+
+/* Next & previous buttons */
+.prev, .next {
+  position: relative;
+  top: -350px;
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color:orange;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: -810px;
+  border-radius: 3px 0 0 3px;
+  background-color:orange;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  position: relative;
+  align-items: center;
+  top:-100px;
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 8px;
+  width: 30%;
+  text-align: center;
+  margin: 0px auto;
+  background-color:orange;
+  font-family: sans-serif;
+
+
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: relative;
+  top: 10px;
+}
+
+/* The dots/bullets/indicators */
+/* .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  }
+.pointer{    
+    
+    top:80%;
+    width:10%;
+    right:45%;
+
+    
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+} */
+
+/* Fading animation */   
+.fades {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fades {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+.fixed{
+  width:27%;
+  display: block;
+  border: none;
+ 
+  /* border-left: 2px solid grey;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey; */
+  padding: 0 60px 0 40px;
+  color:white;
+  font-family: sans-serif;
+
+}
+
+.container {
+  max-width: 960px;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+.table th {
+  width: 30%;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+}

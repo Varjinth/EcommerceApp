@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <link rel="stylesheet" type="text/css" href="{% static 'myapps/style.css' %}">
+
+      <link rel="shortcut Icon" type="Image/png" href="{% static 'myapps/img/cartlogo.png' %}">
+      <title>Shopping app</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+      
+
+    </head>
+    <body>
+      <header>    
+      
+      <div>
+        <h2 class="logoname">Shopping app</h2>
+      </div>
+      
+
+      <div class="nav_list" >
+      <ul >
+        <li >
+           <a class="nav_link" href="{% url 'home' %}">HOME</a>
+        </li>
+        <li >
+           <a class="nav_link" href="#">Services</a>
+        </li>
+        <li >
+           <a class="nav_link" href="#">ABOUT</a>
+        </li>
+        <li >
+           <a class="nav_link" href="{% url 'cart' %}">Go to Cart</a>
+        </li>
+      </ul>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="login_logo">
+        <p><a href="">{{user.username}}</a></p>
+        <p><img src="{% static 'myapps/img/userlogo.png' %}"/></p>
+        <p><a href="{% url 'logout' %}">LOGOUT</a></p>
+    </div>
+    {% else %}
+     <div class="login_logo">
+      <p><a href="{% url 'login' %}">LOGIN/SIGNUP</a></p>
+      <p><img src="{% static 'myapps/img/userlogo.png' %}"/></p>
+      </div>
+      {% endif %}
+    </header>
+    {% block content %}{% endblock %}
+
+
+</body>
+
+</html>
+
+
+

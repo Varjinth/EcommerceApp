@@ -1,0 +1,50 @@
+{% extends "myapps/base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Your Cart</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart_items %}
+          <tr>
+            <td>{{ item.product.product_name }}</td>
+            <td>₹{{ item.price }}</td>
+            <td>
+              <form method="post" action="{% url 'update_cart' item.id %}">
+                {% csrf_token %}
+                <input type="hidden" name="item_id" value="{{ item.id }}">
+                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="999" style="width: 60px;">
+                <button type="submit" class="btn btn-sm btn-outline-secondary">Update</button>
+              </form>
+            </td>
+            <td>₹{{ item.subtotal }}</td>
+            <td>
+              <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-sm btn-outline-secondary">Remove</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"></td>
+            <td>Total:</td>
+            <td>₹{{ total }}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <a href="{% url 'checkout' %}" class="btn btn-primary">Checkout</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
